@@ -3,6 +3,7 @@
 #import <net/if.h>
 #import <SystemConfiguration/CaptiveNetwork.h>
 #import <NetworkExtension/NetworkExtension.h>  
+#include "FGRoute.h"
 
 @implementation WifiWizard2
 
@@ -189,6 +190,16 @@
     
     [self.commandDelegate sendPluginResult:pluginResult
                                 callbackId:command.callbackId];
+}
+
+- (void)getWifiRouterIP:(CDVInvokedUrlCommand *)command {
+    CDVPluginResult *pluginResult = nil;
+    
+    NSString *routerIp = [FGRoute getGatewayIP];
+    
+    pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:routerIp];
+    
+    [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
 }
 
 - (void)isWifiEnabled:(CDVInvokedUrlCommand*)command {
