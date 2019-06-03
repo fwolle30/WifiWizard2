@@ -73,6 +73,7 @@
             
         <header-file src="src/ios/WifiWizard2.h" />
         <header-file src="src/ios/IpHelper.h" />        <header-file src="src/ios/FGRoute.h" />
+        <header-file src="src/ios/route.h" />
         <source-file src="src/ios/WifiWizard2.m" />
 	<source-file src="src/ios/FGRoute.m" />	<source-file src="src/ios/IpHelper.c" />
         <framework src="SystemConfiguration.framework" />
